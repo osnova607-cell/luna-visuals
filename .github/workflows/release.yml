@@ -98,15 +98,24 @@ jobs:
           JAR="${{ steps.jar.outputs.path }}"
           NAME="$(basename "$JAR")"
           SHA="$(cat "${JAR}.sha256")"
+          SIZE="$(stat -c%s "$JAR")"
           URL="${{ github.server_url }}/${{ github.repository }}/releases/download/${{ github.ref_name }}/${NAME}"
+          # Two readers share this file:
+          #   * the Electron launcher (LunaVisualsService.normalizeManifest) needs id, mcVersions, sha256 and url
+          #   * the native launcher reads version/file/sha256/url and ignores the rest
+          # Keep the file name small and machine-safe: it is also the jar's name in the launcher's mods/ folder.
           cat > latest.json <<JSON
           {
+            "id": "lunavisuals",
             "version": "${{ steps.props.outputs.version }}",
             "minecraft": "${{ steps.props.outputs.minecraft }}",
+            "mcVersions": ["${{ steps.props.outputs.minecraft }}"],
             "loader": "fabric",
             "file": "${NAME}",
+            "size": ${SIZE},
             "sha256": "${SHA}",
-            "url": "${URL}"
+            "url": "${URL}",
+            "notes": "Luna Visuals ${{ steps.props.outputs.version }}"
           }
           JSON
           cat latest.json
