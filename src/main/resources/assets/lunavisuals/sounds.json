@@ -1,0 +1,322 @@
+{
+    "ui.click":  {
+                     "sounds":  [
+                                    {
+                                        "name":  "lunavisuals:ui/click",
+                                        "stream":  false
+                                    }
+                                ]
+                 },
+    "ui.hover":  {
+                     "sounds":  [
+                                    {
+                                        "name":  "lunavisuals:ui/hover",
+                                        "stream":  false
+                                    }
+                                ]
+                 },
+    "ui.tick":  {
+                    "sounds":  [
+                                   {
+                                       "name":  "lunavisuals:ui/tick",
+                                       "stream":  false
+                                   }
+                               ]
+                },
+    "ui.toggle_on":  {
+                         "sounds":  [
+                                        {
+                                            "name":  "lunavisuals:ui/toggle_on",
+                                            "stream":  false
+                                        }
+                                    ]
+                     },
+    "ui.toggle_off":  {
+                          "sounds":  [
+                                         {
+                                             "name":  "lunavisuals:ui/toggle_off",
+                                             "stream":  false
+                                         }
+                                     ]
+                      },
+    "ui.open":  {
+                    "sounds":  [
+                                   {
+                                       "name":  "lunavisuals:ui/open",
+                                       "stream":  false
+                                   }
+                               ]
+                },
+    "ui.close":  {
+                     "sounds":  [
+                                    {
+                                        "name":  "lunavisuals:ui/close",
+                                        "stream":  false
+                                    }
+                                ]
+                 },
+    "ui.page":  {
+                    "sounds":  [
+                                   {
+                                       "name":  "lunavisuals:ui/page",
+                                       "stream":  false
+                                   }
+                               ]
+                },
+    "ui.pop":  {
+                   "sounds":  [
+                                  {
+                                      "name":  "lunavisuals:ui/pop",
+                                      "stream":  false
+                                  }
+                              ]
+               },
+    "ui.select":  {
+                      "sounds":  [
+                                     {
+                                         "name":  "lunavisuals:ui/select",
+                                         "stream":  false
+                                     }
+                                 ]
+                  },
+    "ui.grab":  {
+                    "sounds":  [
+                                   {
+                                       "name":  "lunavisuals:ui/grab",
+                                       "stream":  false
+                                   }
+                               ]
+                },
+    "ui.drop":  {
+                    "sounds":  [
+                                   {
+                                       "name":  "lunavisuals:ui/drop",
+                                       "stream":  false
+                                   }
+                               ]
+                },
+    "ui.type":  {
+                    "sounds":  [
+                                   {
+                                       "name":  "lunavisuals:ui/type",
+                                       "stream":  false
+                                   }
+                               ]
+                },
+    "ui.reset":  {
+                     "sounds":  [
+                                    {
+                                        "name":  "lunavisuals:ui/reset",
+                                        "stream":  false
+                                    }
+                                ]
+                 },
+    "ui.charge":  {
+                      "sounds":  [
+                                     {
+                                         "name":  "lunavisuals:ui/charge",
+                                         "stream":  false
+                                     }
+                                 ]
+                  },
+    "ui.drain":  {
+                     "sounds":  [
+                                    {
+                                        "name":  "lunavisuals:ui/drain",
+                                        "stream":  false
+                                    }
+                                ]
+                 },
+    "ui.tab":  {
+                   "sounds":  [
+                                  {
+                                      "name":  "lunavisuals:ui/tab",
+                                      "stream":  false
+                                  }
+                              ]
+               },
+    "kill.what_a_kill":  {
+                             "sounds":  [
+                                            {
+                                                "name":  "lunavisuals:kill/what_a_kill",
+                                                "stream":  false
+                                            }
+                                        ]
+                         },
+    "kill.excellent":  {
+                           "sounds":  [
+                                          {
+                                              "name":  "lunavisuals:kill/excellent",
+                                              "stream":  false
+                                          }
+                                      ]
+                       },
+    "kill.godlike":  {
+                         "sounds":  [
+                                        {
+                                            "name":  "lunavisuals:kill/godlike",
+                                            "stream":  false
+                                        }
+                                    ]
+                     },
+    "kill.too_easy":  {
+                          "sounds":  [
+                                         {
+                                             "name":  "lunavisuals:kill/too_easy",
+                                             "stream":  false
+                                         }
+                                     ]
+                      },
+    "kill.victory":  {
+                         "sounds":  [
+                                        {
+                                            "name":  "lunavisuals:kill/victory",
+                                            "stream":  false
+                                        }
+                                    ]
+                     },
+    "hit.pop":  {
+                    "sounds":  [
+                                   {
+                                       "name":  "lunavisuals:hit/pop",
+                                       "stream":  false
+                                   }
+                               ]
+                },
+    "hit.click":  {
+                      "sounds":  [
+                                     {
+                                         "name":  "lunavisuals:hit/click",
+                                         "stream":  false
+                                     }
+                                 ]
+                  },
+    "hit.bell":  {
+                     "sounds":  [
+                                    {
+                                        "name":  "lunavisuals:hit/bell",
+                                        "stream":  false
+                                    }
+                                ]
+                 },
+    "hit.bubble":  {
+                       "sounds":  [
+                                      {
+                                          "name":  "lunavisuals:hit/bubble",
+                                          "stream":  false
+                                      }
+                                  ]
+                   },
+    "hit.punch":  {
+                      "sounds":  [
+                                     {
+                                         "name":  "lunavisuals:hit/punch",
+                                         "stream":  false
+                                     }
+                                 ]
+                  },
+    "hit.crystal":  {
+                        "sounds":  [
+                                       {
+                                           "name":  "lunavisuals:hit/crystal",
+                                           "stream":  false
+                                       }
+                                   ]
+                    },
+    "hit.coin":  {
+                     "sounds":  [
+                                    {
+                                        "name":  "lunavisuals:hit/coin",
+                                        "stream":  false
+                                    }
+                                ]
+                 },
+    "hit.wood":  {
+                     "sounds":  [
+                                    {
+                                        "name":  "lunavisuals:hit/wood",
+                                        "stream":  false
+                                    }
+                                ]
+                 },
+    "hit.gamesense":  {
+                          "sounds":  [
+                                         {
+                                             "name":  "lunavisuals:hit/gamesense",
+                                             "stream":  false
+                                         }
+                                     ]
+                      },
+    "hit.neverlose":  {
+                          "sounds":  [
+                                         {
+                                             "name":  "lunavisuals:hit/neverlose",
+                                             "stream":  false
+                                         }
+                                     ]
+                      },
+    "impact.railgun_equip":  {
+                                 "sounds":  [
+                                                {
+                                                    "name":  "lunavisuals:impact/railgun_equip",
+                                                    "stream":  false
+                                                }
+                                            ]
+                             },
+    "impact.railgun_scope_on":  {
+                                    "sounds":  [
+                                                   {
+                                                       "name":  "lunavisuals:impact/railgun_scope_on",
+                                                       "stream":  false
+                                                   }
+                                               ]
+                                },
+    "ui.unlock":  {
+                      "sounds":  [
+                                     {
+                                         "name":  "lunavisuals:ui/unlock",
+                                         "stream":  false
+                                     }
+                                 ]
+                  },
+    "ui.lock":  {
+                    "sounds":  [
+                                   {
+                                       "name":  "lunavisuals:ui/lock",
+                                       "stream":  false
+                                   }
+                               ]
+                },
+    "ui.interact_open":  {
+                             "sounds":  [
+                                            {
+                                                "name":  "lunavisuals:ui/interact_open",
+                                                "stream":  false
+                                            }
+                                        ]
+                         },
+    "ui.interact_close":  {
+                              "sounds":  [
+                                             {
+                                                 "name":  "lunavisuals:ui/interact_close",
+                                                 "stream":  false
+                                             }
+                                         ]
+                          },
+    "ui.interact_hover":  {
+                              "sounds":  [
+                                             {
+                                                 "name":  "lunavisuals:ui/interact_hover",
+                                                 "stream":  false
+                                             }
+                                         ]
+                          },
+    "ui.interact_pick":  {
+                             "sounds":  [
+                                            {
+                                                "name":  "lunavisuals:ui/interact_pick",
+                                                "stream":  false
+                                            }
+                                        ]
+                         }
+}

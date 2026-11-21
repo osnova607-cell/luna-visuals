@@ -1,0 +1,33 @@
+/*
+ * This file is part of Luna Visuals
+ *
+ * Copyright (c) 2026 Luna
+ *
+ * Luna Visuals is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Luna Visuals is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Luna Visuals. If not, see <https://www.gnu.org/licenses/>.
+ */
+package net.lunavisuals.gui;
+
+import net.minecraft.client.gui.GuiGraphics;
+
+public final class MenuBackdrop {
+    private MenuBackdrop() {}
+
+    public static void draw(GuiGraphics g) {
+        draw(g, 1.0F);
+    }
+
+    public static void draw(GuiGraphics g, float opacity) {
+        Wallpaper.draw(g, opacity);
+    }
+}

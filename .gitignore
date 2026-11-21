@@ -1,0 +1,31 @@
+# Gradle and build output
+.gradle/
+build/
+*.jar
+!libs/*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# the development game folder: logs, settings, the names of players that were met
+run/
+config/
+logs/
+
+# Python caches
+__pycache__/
+*.pyc
+
+# only the mod lives here: the launcher, the API server and their docs are private
+server/
+launcher/
+native/
+installer/
+*.exe
+docs/microsoft-setup.md
+
+# IDE and OS
+.idea/
+*.iml
+.vscode/
+out/
+Thumbs.db
+.DS_Store

@@ -1,0 +1,830 @@
+[
+    {
+        "n":  200,
+        "name":  "Seraph",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  201,
+        "name":  "Fallen",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  202,
+        "name":  "Phoenix",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  203,
+        "name":  "Frost",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  204,
+        "name":  "Astral",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  205,
+        "name":  "Dragon",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  206,
+        "name":  "Clockwork",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  207,
+        "name":  "Morpho",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  208,
+        "name":  "Fairy",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  220,
+        "name":  "Supreme",
+        "type":  "bodywear",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  221,
+        "name":  "The North Face",
+        "type":  "bodywear",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  222,
+        "name":  "Louis Vuitton",
+        "type":  "bodywear",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  223,
+        "name":  "Gucci",
+        "type":  "bodywear",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  224,
+        "name":  "Nike",
+        "type":  "bodywear",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  225,
+        "name":  "Adidas",
+        "type":  "bodywear",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  226,
+        "name":  "Off-White",
+        "type":  "bodywear",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  227,
+        "name":  "BAPE Shark",
+        "type":  "bodywear",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  228,
+        "name":  "Kanken",
+        "type":  "bodywear",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  229,
+        "name":  "Chanel",
+        "type":  "bodywear",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  230,
+        "name":  "Jordan",
+        "type":  "bodywear",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  231,
+        "name":  "Prada",
+        "type":  "bodywear",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1.2
+    },
+    {
+        "n":  264,
+        "name":  "Tabby Cat",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  265,
+        "name":  "Fox",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  266,
+        "name":  "Shiba",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  300,
+        "name":  "Pig Hat",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  301,
+        "name":  "Cow Hat",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  302,
+        "name":  "Mooshroom Hat",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  303,
+        "name":  "Fox Hat",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  306,
+        "name":  "Creeper Hat",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  320,
+        "name":  "UFO",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  321,
+        "name":  "Storm Cloud",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  322,
+        "name":  "Aquarium Helmet",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  323,
+        "name":  "Jellyfish",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  324,
+        "name":  "End Crystal",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  325,
+        "name":  "Solar System",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  326,
+        "name":  "Sculk Crown",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  327,
+        "name":  "Ramen Bowl",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  328,
+        "name":  "Bird\u0027s Nest",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  329,
+        "name":  "Snow Globe",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  330,
+        "name":  "Neon Cat Headset",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  331,
+        "name":  "Black Hole",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  401,
+        "name":  "Bear Hat",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  402,
+        "name":  "Blackhole Halo",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  403,
+        "name":  "Frog Hat",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  404,
+        "name":  "Pilot Hat",
+        "type":  "hat",
+        "pos":  2,
+        "cat":  1,
+        "y":  -1.5
+    },
+    {
+        "n":  410,
+        "name":  "Archangel",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1,
+        "scale":  0.9
+    },
+    {
+        "n":  411,
+        "name":  "Balloon",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1,
+        "scale":  0.9
+    },
+    {
+        "n":  412,
+        "name":  "Blackhole",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1,
+        "scale":  0.9
+    },
+    {
+        "n":  413,
+        "name":  "Butterfly",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1,
+        "scale":  0.9
+    },
+    {
+        "n":  414,
+        "name":  "Draco",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1,
+        "scale":  0.9
+    },
+    {
+        "n":  415,
+        "name":  "Rocket",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1,
+        "scale":  0.9
+    },
+    {
+        "n":  416,
+        "name":  "Steampunk",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1,
+        "scale":  0.9
+    },
+    {
+        "n":  417,
+        "name":  "Techno",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "y":  -1,
+        "scale":  0.9
+    },
+    {
+        "n":  442,
+        "name":  "Vulcano",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "scale":  1,
+        "x":  0,
+        "y":  0,
+        "z":  0,
+        "yaw":  0,
+        "pitch":  0,
+        "roll":  0
+    },
+    {
+        "n":  443,
+        "name":  "Angel",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "scale":  0.9,
+        "x":  0,
+        "y":  -1.05,
+        "z":  0,
+        "yaw":  0,
+        "pitch":  0,
+        "roll":  0
+    },
+    {
+        "n":  444,
+        "name":  "Baby Dragon",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "scale":  1,
+        "x":  0,
+        "y":  -1.05,
+        "z":  0,
+        "yaw":  0,
+        "pitch":  0,
+        "roll":  0
+    },
+    {
+        "n":  445,
+        "name":  "Dragon Blue",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "scale":  0.9,
+        "x":  0,
+        "y":  -1.05,
+        "z":  0,
+        "yaw":  0,
+        "pitch":  0,
+        "roll":  0
+    },
+    {
+        "n":  446,
+        "name":  "Spider",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "scale":  1,
+        "x":  0,
+        "y":  0,
+        "z":  0,
+        "yaw":  0,
+        "pitch":  0,
+        "roll":  0
+    },
+    {
+        "n":  447,
+        "name":  "Easter",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "scale":  0.9,
+        "x":  0,
+        "y":  -1.05,
+        "z":  0,
+        "yaw":  0,
+        "pitch":  0,
+        "roll":  0
+    },
+    {
+        "n":  448,
+        "name":  "Chains",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "scale":  1.1,
+        "x":  0,
+        "y":  -1.3,
+        "z":  0.15,
+        "yaw":  0,
+        "pitch":  0,
+        "roll":  0
+    },
+    {
+        "n":  449,
+        "name":  "Trident",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "scale":  0.9,
+        "x":  0,
+        "y":  -1.05,
+        "z":  0.2,
+        "yaw":  0,
+        "pitch":  0,
+        "roll":  0
+    },
+    {
+        "n":  450,
+        "name":  "Aqua",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "scale":  0.9,
+        "x":  0,
+        "y":  -1.05,
+        "z":  0,
+        "yaw":  0,
+        "pitch":  0,
+        "roll":  0
+    },
+    {
+        "n":  451,
+        "name":  "Rocker",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "scale":  0.9,
+        "x":  0,
+        "y":  -1.05,
+        "z":  0,
+        "yaw":  0,
+        "pitch":  0,
+        "roll":  0
+    },
+    {
+        "n":  452,
+        "name":  "Ghoul",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "scale":  0.6,
+        "x":  0,
+        "y":  -0.65,
+        "z":  0,
+        "yaw":  0,
+        "pitch":  0,
+        "roll":  0
+    },
+    {
+        "n":  453,
+        "name":  "Yellow",
+        "type":  "wings",
+        "pos":  1,
+        "cat":  1,
+        "scale":  1,
+        "x":  0,
+        "y":  -1.2,
+        "z":  0,
+        "yaw":  0,
+        "pitch":  0,
+        "roll":  0
+    },
+    {
+        "n":  420,
+        "name":  "Axolotl",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0
+    },
+    {
+        "n":  421,
+        "name":  "Big Cat",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0
+    },
+    {
+        "n":  422,
+        "name":  "Capybara",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0
+    },
+    {
+        "n":  423,
+        "name":  "Dragon",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0
+    },
+    {
+        "n":  424,
+        "name":  "Frog Custom",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0
+    },
+    {
+        "n":  425,
+        "name":  "Guinea Pig",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0
+    },
+    {
+        "n":  426,
+        "name":  "Panda",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0
+    },
+    {
+        "n":  427,
+        "name":  "Patrick",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0
+    },
+    {
+        "n":  428,
+        "name":  "Pig",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0
+    },
+    {
+        "n":  429,
+        "name":  "Spongebob",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0
+    },
+    {
+        "n":  430,
+        "name":  "Bigear Goat",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0
+    },
+    {
+        "n":  431,
+        "name":  "Chekushka",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0
+    },
+    {
+        "n":  432,
+        "name":  "Owl Jump Rope",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0
+    },
+    {
+        "n":  433,
+        "name":  "UFO",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0
+    },
+    {
+        "n":  434,
+        "name":  "Angel",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0,
+        "scale":  1
+    },
+    {
+        "n":  435,
+        "name":  "Demon",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0,
+        "scale":  1
+    },
+    {
+        "n":  436,
+        "name":  "Buddy",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0,
+        "scale":  1
+    },
+    {
+        "n":  437,
+        "name":  "Diamond",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0,
+        "scale":  0.6
+    },
+    {
+        "n":  438,
+        "name":  "Bee",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0,
+        "scale":  1
+    },
+    {
+        "n":  439,
+        "name":  "Cergifff",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0,
+        "scale":  0.8
+    },
+    {
+        "n":  440,
+        "name":  "Ila_Studio",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0,
+        "scale":  0.8
+    },
+    {
+        "n":  441,
+        "name":  "Creeper",
+        "type":  "pet",
+        "pos":  3,
+        "cat":  1,
+        "x":  0.75,
+        "z":  0.35,
+        "y":  0,
+        "scale":  0.8
+    }
+]

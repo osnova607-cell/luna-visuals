@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "lunavisuals",
+  "version": "${version}",
+  "name": "Luna Visuals",
+  "description": "Визуальный клиент Luna: меню, HUD, эффекты ударов, следы, прицел и анимации рук. Только визуал — механика боя не меняется.",
+  "authors": ["Luna"],
+  "license": "GPL-3.0-or-later",
+  "icon": "assets/lunavisuals/icon.png",
+  "environment": "client",
+  "entrypoints": { "client": ["net.lunavisuals.LunaVisuals"] },
+  "mixins": ["lunavisuals.mixins.json"],
+  "depends": { "fabricloader": ">=0.17.0", "minecraft": "~1.21.11", "java": ">=21", "fabric-api": "*" }
+}

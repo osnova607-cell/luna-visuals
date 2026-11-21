@@ -1,0 +1,106 @@
+plugins {
+	id 'net.fabricmc.fabric-loom-remap' version "${loom_version}"
+	id 'com.diffplug.spotless' version '7.2.1'
+}
+
+spotless {
+	java {
+		target 'src/**/*.java'
+		palantirJavaFormat('2.74.0')
+		removeUnusedImports()
+		trimTrailingWhitespace()
+		endWithNewline()
+		licenseHeaderFile rootProject.file('HEADER')
+	}
+}
+
+version = project.version
+group = project.group
+base { archivesName = project.archives_base_name }
+
+repositories {
+	// libs/optimizermod-*.jar: the optimiser mod, bundled jar-in-jar as it is
+	flatDir { dirs 'libs' }
+	mavenCentral()
+	exclusiveContent {
+		forRepository { maven { name = 'Modrinth'; url = 'https://api.modrinth.com/maven' } }
+		filter { includeGroup 'maven.modrinth' }
+	}
+	// Player Animation Library (MIT), bundled jar-in-jar: plays the emotes
+	exclusiveContent {
+		forRepository { maven { name = 'RedlanceMinecraft'; url = 'https://repo.redlance.org/public' } }
+		filter { includeGroup 'com.zigythebird.playeranim'; includeGroup 'com.zigythebird' }
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings loom.officialMojangMappings()
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+
+	// ImmediatelyFast, nested jar-in-jar: faster immediate-mode rendering (HUD, text, entities)
+	modImplementation "maven.modrinth:immediatelyfast:${project.immediatelyfast_version}"
+	include "maven.modrinth:immediatelyfast:${project.immediatelyfast_version}"
+	// the optimiser mod (needs ImmediatelyFast); switched on and off by fx/OptimizerMod together with the optimiser module
+	modImplementation "local:optimizermod:1.0.3"
+	include "local:optimizermod:1.0.3"
+	// whisper-jni (Apache-2.0, libs/whisper-jni-1.7.1.jar), bundled jar-in-jar: World Lyrics recognises the words
+	// with Whisper when no lyrics are found; the native library for Windows ships inside it
+	implementation "local:whisper-jni:1.7.1"
+	include "local:whisper-jni:1.7.1"
+	// LuaJ (MIT), bundled jar-in-jar: runs the players' own Lua scripts from the Lua page, in a sandbox
+	implementation "org.luaj:luaj-jse:3.0.1"
+	include "org.luaj:luaj-jse:3.0.1"
+	// players run with Sodium (the launcher installs it): development runs do too; it is not put into our jar
+	modLocalRuntime "maven.modrinth:sodium:rkdTcxoT"
+
+	// emotes: animation engine nested into the jar so players need no separate install
+	modImplementation "com.zigythebird.playeranim:PlayerAnimationLibFabric:${project.pal_version}"
+	include "com.zigythebird.playeranim:PlayerAnimationLibFabric:${project.pal_version}"
+}
+
+processResources {
+	def version = project.version
+	inputs.property "version", version
+	filesMatching("fabric.mod.json") { expand "version": version }
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 21
+	it.options.encoding = 'UTF-8'
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
+}
+
+// Explicit verification task: regular builds do not need an OpenGL context.
+sourceSets {
+    portVerification {
+        java.srcDir 'src/verification/java'
+        compileClasspath += sourceSets.test.compileClasspath
+        runtimeClasspath += sourceSets.test.runtimeClasspath
+    }
+}
+tasks.register('verifyPortMixins', JavaExec) {
+    dependsOn tasks.named('portVerificationClasses')
+    classpath = sourceSets.portVerification.runtimeClasspath
+    mainClass = 'net.lunavisuals.fx.MixinPortAudit'
+    workingDir = projectDir
+    systemProperty 'fabric.development', 'true'
+    systemProperty 'fabric.disableErrorGui', 'true'
+    jvmArgs '--enable-native-access=ALL-UNNAMED'
+}
+
+// Where every wearable lands on the player, in model pixels: checks the catalogue offsets against the models
+// without launching the game.
+tasks.register('runWearProbe', JavaExec) {
+    dependsOn tasks.named('portVerificationClasses')
+    classpath = sourceSets.portVerification.runtimeClasspath
+    mainClass = 'net.lunavisuals.cosmetic.WearBoundsProbe'
+    workingDir = projectDir
+    systemProperty 'fabric.development', 'true'
+}

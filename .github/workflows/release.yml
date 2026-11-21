@@ -1,0 +1,110 @@
+name: Release
+
+# Собирает мод и публикует релиз при пуше тега вида v1.8.
+# Лаунчер читает релиз через GitHub API и ставит .jar с проверкой SHA-256.
+#
+# Как выпустить версию:
+#   1. Поднимите version в gradle.properties (version=1.9)
+#   2. git tag v1.9 && git push origin v1.9
+#   3. Готово — лаунчер увидит релиз в течение 6 часов (или сразу по кнопке «Проверить обновления»)
+
+on:
+  push:
+    tags:
+      - 'v*'
+  # Ручной запуск из вкладки Actions — удобно проверить сборку без релиза
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Fabric Loom 1.18 требует JVM 25 (на 21 падает: "requires at least JVM runtime version 25").
+      # Мод при этом компилируется под Java 21 — это задаётся в build.gradle (options.release = 21).
+      - name: Set up JDK 25
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Read version from gradle.properties
+        id: props
+        run: |
+          set -euo pipefail
+          VERSION=$(grep -E '^version=' gradle.properties | head -n 1 | cut -d= -f2 | tr -d '[:space:]')
+          if [ -z "$VERSION" ]; then
+            echo "::error::Не найдено version= в gradle.properties"
+            exit 1
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Версия из gradle.properties: $VERSION"
+
+      # spotless проверяет форматирование; на релизе он не должен блокировать сборку
+      - name: Build
+        run: ./gradlew build -x spotlessCheck --no-daemon
+
+      - name: Collect the mod jar
+        id: jar
+        run: |
+          set -euo pipefail
+          VERSION="${{ steps.props.outputs.version }}"
+          EXPECTED="build/libs/lunavisuals-${VERSION}.jar"
+          if [ -f "$EXPECTED" ]; then
+            JAR="$EXPECTED"
+          else
+            # Фолбэк: единственный подходящий jar, без sources/javadoc/dev/api
+            JAR=$(find build/libs -name '*.jar' \
+              ! -name '*-sources.jar' \
+              ! -name '*-javadoc.jar' \
+              ! -name '*-dev.jar' \
+              ! -name '*-api.jar' \
+              | head -n 1)
+          fi
+          if [ -z "$JAR" ] || [ ! -f "$JAR" ]; then
+            echo "::error::Не найден собранный .jar (ожидался $EXPECTED)"
+            ls -la build/libs || true
+            exit 1
+          fi
+          echo "Собран: $JAR ($(du -h "$JAR" | cut -f1))"
+          echo "path=$JAR" >> "$GITHUB_OUTPUT"
+          echo "name=$(basename "$JAR")" >> "$GITHUB_OUTPUT"
+
+      - name: Write SHA-256 sidecar
+        run: |
+          set -euo pipefail
+          JAR="${{ steps.jar.outputs.path }}"
+          # Лаунчер требует контрольную сумму: без неё обновление не устанавливается.
+          sha256sum "$JAR" | awk '{print $1}' > "${JAR}.sha256"
+          echo "SHA-256: $(cat "${JAR}.sha256")"
+
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Luna Visuals ${{ steps.props.outputs.version }}
+          tag_name: ${{ github.ref_name }}
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+          files: |
+            ${{ steps.jar.outputs.path }}
+            ${{ steps.jar.outputs.path }}.sha256
+
+      # Сборка без тега: артефакт доступен для скачивания в Actions, релиз не создаётся
+      - name: Upload build artifact
+        if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: luna-visuals-jar
+          path: |
+            ${{ steps.jar.outputs.path }}
+            ${{ steps.jar.outputs.path }}.sha256

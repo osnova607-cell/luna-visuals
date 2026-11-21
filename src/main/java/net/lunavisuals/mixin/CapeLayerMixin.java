@@ -1,0 +1,74 @@
+/*
+ * This file is part of Luna Visuals
+ *
+ * Copyright (c) 2026 Luna
+ *
+ * Luna Visuals is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Luna Visuals is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Luna Visuals. If not, see <https://www.gnu.org/licenses/>.
+ */
+package net.lunavisuals.mixin;
+
+import com.mojang.blaze3d.vertex.PoseStack;
+import net.lunavisuals.melee.Capes;
+import net.lunavisuals.melee.ClothCapeRenderer;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.player.PlayerModel;
+import net.minecraft.client.player.AbstractClientPlayer;
+import net.minecraft.client.renderer.SubmitNodeCollector;
+import net.minecraft.client.renderer.entity.layers.CapeLayer;
+import net.minecraft.client.renderer.entity.layers.RenderLayer;
+import net.minecraft.client.renderer.entity.state.AvatarRenderState;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+@Mixin({CapeLayer.class})
+public abstract class CapeLayerMixin {
+    @Inject(
+            method = {
+                "submit(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;ILnet/minecraft/client/renderer/entity/state/AvatarRenderState;FF)V"
+            },
+            at = {@At("HEAD")},
+            cancellable = true)
+    private void lunavisuals$cape(
+            PoseStack pose,
+            SubmitNodeCollector collector,
+            int light,
+            AvatarRenderState state,
+            float limbAngle,
+            float limbDistance,
+            CallbackInfo ci) {
+        Minecraft mc = Minecraft.getInstance();
+        if (mc.level != null) {
+            Entity entity2 = mc.level.getEntity(state.id);
+            if (entity2 instanceof AbstractClientPlayer) {
+                AbstractClientPlayer player = (AbstractClientPlayer) entity2;
+                if (Capes.resolve(player) != null
+                        && !player.getItemBySlot(EquipmentSlot.CHEST).has(DataComponents.GLIDER)) {
+                    RenderLayer<AvatarRenderState, PlayerModel> self =
+                            (RenderLayer<AvatarRenderState, PlayerModel>) (Object) this;
+                    ClothCapeRenderer.getInstance()
+                            .render(pose, collector, light, state, player, self.getParentModel());
+                    ci.cancel();
+                    return;
+                }
+
+                return;
+            }
+        }
+    }
+}
