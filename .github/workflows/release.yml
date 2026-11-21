@@ -1,7 +1,7 @@
 name: Release
 
 # Собирает мод и публикует релиз при пуше тега вида v1.8.
-# Лаунчер читает релиз через GitHub API и ставит .jar с проверкой SHA-256.
+# Лаунчер читает latest.json из ассетов последнего релиза и ставит .jar с проверкой SHA-256.
 #
 # Как выпустить версию:
 #   1. Поднимите version в gradle.properties (version=1.9)
@@ -46,8 +46,10 @@ jobs:
             echo "::error::Не найдено version= в gradle.properties"
             exit 1
           fi
+          MC=$(grep -E '^minecraft_version=' gradle.properties | head -n 1 | cut -d= -f2 | tr -d '[:space:]')
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-          echo "Версия из gradle.properties: $VERSION"
+          echo "minecraft=$MC" >> "$GITHUB_OUTPUT"
+          echo "Версия из gradle.properties: $VERSION (Minecraft $MC)"
 
       # spotless проверяет форматирование; на релизе он не должен блокировать сборку
       - name: Build
@@ -87,6 +89,28 @@ jobs:
           sha256sum "$JAR" | awk '{print $1}' > "${JAR}.sha256"
           echo "SHA-256: $(cat "${JAR}.sha256")"
 
+      # Манифест, по которому лаунчер узнаёт о новой версии без GitHub API и его лимитов.
+      # Лежит в ассетах релиза: /releases/latest/download/latest.json всегда отдаёт свежий.
+      - name: Write update manifest
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: |
+          set -euo pipefail
+          JAR="${{ steps.jar.outputs.path }}"
+          NAME="$(basename "$JAR")"
+          SHA="$(cat "${JAR}.sha256")"
+          URL="${{ github.server_url }}/${{ github.repository }}/releases/download/${{ github.ref_name }}/${NAME}"
+          cat > latest.json <<JSON
+          {
+            "version": "${{ steps.props.outputs.version }}",
+            "minecraft": "${{ steps.props.outputs.minecraft }}",
+            "loader": "fabric",
+            "file": "${NAME}",
+            "sha256": "${SHA}",
+            "url": "${URL}"
+          }
+          JSON
+          cat latest.json
+
       - name: Publish release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
@@ -98,6 +122,7 @@ jobs:
           files: |
             ${{ steps.jar.outputs.path }}
             ${{ steps.jar.outputs.path }}.sha256
+            latest.json
 
       # Сборка без тега: артефакт доступен для скачивания в Actions, релиз не создаётся
       - name: Upload build artifact
